@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coral Archipelago Air Rally</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="game-root"></div>
+
+<!-- HUD -->
+<div id="hud" class="hidden">
+  <div id="hud-top-left">
+    <div id="mission-title">CORAL ARCHIPELAGO AIR RALLY</div>
+    <div id="objective">Ring 1 / 10 — fly through the glowing ring</div>
+    <div id="score-line">SCORE <span id="score">0</span> &nbsp;·&nbsp; TIME <span id="time">0:00</span></div>
+  </div>
+  <div id="hud-top-right">
+    <div class="gauge-row"><span class="gauge-label">FUEL</span><div class="gauge-bar"><div id="fuel-fill"></div></div><span id="fuel-num" class="gauge-num">100</span></div>
+    <div class="gauge-row"><span class="gauge-label">THR</span><div class="gauge-bar"><div id="thr-fill"></div></div><span id="thr-num" class="gauge-num">0%</span></div>
+    <div id="wind-line">WIND 12 KT NW · VIS 10 SM</div>
+  </div>
+  <div id="hud-bottom-left">
+    <canvas id="horizon" width="150" height="150"></canvas>
+    <div id="flight-data">
+      <div class="fd-row"><span class="fd-label">ALT</span><span id="alt" class="fd-value">0</span><span class="fd-unit">FT</span></div>
+      <div class="fd-row"><span class="fd-label">SPD</span><span id="spd" class="fd-value">0</span><span class="fd-unit">KT</span></div>
+      <div class="fd-row"><span class="fd-label">HDG</span><span id="hdg" class="fd-value">090°</span></div>
+      <div class="fd-row"><span class="fd-label">V/S</span><span id="vs" class="fd-value">0</span><span class="fd-unit">FPM</span></div>
+    </div>
+  </div>
+  <div id="compass"><div id="compass-strip"></div><div id="compass-needle">▲</div></div>
+  <div id="hud-bottom-right">
+    <div class="hint">W/S throttle · A/D or mouse steer · P pause · R restart</div>
+    <div class="hint">Fly through rings, then land on Coral Strip</div>
+  </div>
+  <div id="message"></div>
+  <div id="ring-flash"></div>
+</div>
+
+<!-- Start / pause / end overlay -->
+<div id="overlay">
+  <div id="overlay-card">
+    <div id="overlay-kicker">MAKE.FUN · BEST FLIGHT GAME</div>
+    <h1 id="overlay-title">CORAL ARCHIPELAGO<br>AIR RALLY</h1>
+    <p id="overlay-sub">Ten glowing rings over a tropical archipelago, then a
+      wheels-down landing on Coral Strip. Watch your fuel — every ring tops
+      the tank back up.</p>
+    <div id="overlay-stats" class="hidden"></div>
+    <div id="overlay-controls">
+      <div><b>W / S</b> throttle</div>
+      <div><b>A / D</b> or <b>mouse</b> bank &amp; turn</div>
+      <div><b>↑ / ↓</b> climb &amp; dive</div>
+      <div><b>P</b> pause · <b>R</b> restart</div>
+    </div>
+    <button id="overlay-button">CLICK TO FLY</button>
+    <div id="overlay-foot">A tiny coral-orange seaplane, eleven islands, one runway.
+      Built from scratch — no copied game, art or music.</div>
+  </div>
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
